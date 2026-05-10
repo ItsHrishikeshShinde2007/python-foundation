@@ -1,0 +1,8 @@
+print("Max Verstappen's stats")
+print("Career wins: " + str(70 + 1))
+print("World Championships: " + str(6 - 2))
+print("Consecutive wins: " + str(5 * 2))
+print("Total career podiums: " + str(725 / 5))
+print("Age when he started F1: " + str(75 // 4))
+print("Wins in 2023: " + str(161 % 71))
+print("Career power index: " + str(48 ** 4))
