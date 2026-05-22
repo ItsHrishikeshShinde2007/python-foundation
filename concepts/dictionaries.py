@@ -1,4 +1,4 @@
-print("My favirite F1 driver is: ")
+print("My favorite F1 driver is: ")
 
 myfavdriver1 = {
     "Name" : "Max Verstappen",
