@@ -1,40 +1,50 @@
-drivers = ["Max Verstappen", "Kimi Antonelli", "Charles Leclerc", "Oscar Piastri", "Lando Norris"]
-while(True):
-    print("Ok so the current GOAT on the grids are ", drivers)
-    print("Would you like to add or delete something")
-    print("1. Yes")
-    print("2. No")
-    answer = int(input(""))
-    if(answer == 1):
-        print("Please specify if you want to add or delete the drivers")
+def listdrivers():
+    for i in range(len(drivers)):
+        print(i + 1, drivers[i])
+
+drivers = ["Max verstappen", "Kimi Antonelli", "Charles Leclerc", "Oscar Piastri", "Lando Norris"]
+print("Ok so this is the list of drivers which i feel are the best in the world right now")
+listdrivers()
+
+while True:
+        print("What operation you want to perform? (Add / Remove)")
         print("1. Add")
-        print("2. Delete")
-        answer2 = int(input(""))
-        if(answer2 == 1):
-            new_name = str(input("Please State the name of the driver: "))
-            new_index = int(input("Please state where would you want to put him: "))
-            if(new_index == 0):
-                print("Nah Nah Nah no one takes his place he is the real Goat try any another index you ain't getting that one")
+        print("2. Remove")
+        print("3. Show")
+        print("4. Exit")
+        print("Enter the option number (1, 2, 3 or 4): ")
+        operation = input()
+        if operation == "1":
+            print("The list of drivers is stated again who else would you like to add in the list and where?")
+            listdrivers()
+            new_driver = input("Enter the name of the driver you want to add: ")
+            new_driver_position = int(input("Enter the position where you want to add the driver: "))
+            if (new_driver_position > len(drivers) + 1) or (new_driver_position < 1):
+                print("Invalid position. Please enter a position between 1 and", len(drivers) + 1)
+            elif(new_driver_position == 1):
+                print("Haha nice try but you can't add any other driver to top, Max is the best driver in the world and he deserves to be on top")
             else:
-                drivers.insert(new_index, new_name)
-                print("Ok so the Updates list is: ", drivers)
-        if(answer2 == 2):
-            print("Alright, state the index of the driver that you want to remove below")
-            answer3 = int(input("But remember, you can't remove the real GOAT from the list: "))
-            if(answer3 == 0):
-                print("Haha Nice try but nah that ain't happening, he is a goat for a reason and that's why he is up there, why dont you try removing Lando? ")
+                drivers.insert(new_driver_position - 1, new_driver)
+                print("ok so new driver " + new_driver + " added successfully. Updated list of drivers:")
+                listdrivers()
+        elif operation == "2":
+            print("This is the list again look at the list and state which driver you want to remove: ")
+            listdrivers()
+            print("Enter the number of the driver you want to remove: ")
+            remove_driver = int(input("Enter the number of the driver you want to remove: "))
+            if (remove_driver > len(drivers)) or (remove_driver < 1):
+                print("Invalid number. Please enter a number between 1 and", len(drivers))
+            elif(remove_driver == 1):
+                print("Haha nice try but you can't remove Max, he is the best driver in the world and he deserves to be on top")
             else:
-                print("Ok so you have choosen driver ", drivers[answer3] ," from the list you sure want to delete this driver?")
-                print("1. Yes")
-                print("2. No")
-                answer4 = int(input(""))
-                if(answer4 == 1):
-                    print("alright,", drivers[answer3], "removed from the list")
-                    drivers.pop(answer3)
-                    print("Ok so the Updates list is: ", drivers)
-                else:
-                    print("Ok deleting driver ", drivers[answer3], " from Goat series cancelled")
-                    print("So the list stays: ", drivers)
-    elif(answer == 2):
-        print("Fair I know I am the best to rank the top drivers")
-        print("The list is: ", drivers)
+                removed_driver = drivers.pop(remove_driver - 1)
+                print("ok so driver " + removed_driver + " removed successfully. Updated list of drivers:")
+                listdrivers()
+        elif operation == "3":
+            print("The list of drivers is: ")
+            listdrivers()
+        elif operation == "4":
+            print("Simply Lovely")
+            break
+        else:
+            print("Invalid option. Please enter 1, 2, 3, or 4.")
