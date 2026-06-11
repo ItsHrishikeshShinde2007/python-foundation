@@ -29,7 +29,7 @@ drivers = ["Max verstappen", "Kimi Antonelli", "Charles Leclerc", "Oscar Piastri
 print("Ok so this is the list of drivers which i feel are the best in the world right now")
 listdrivers()
 while True:
-        print("What operation you want to perform? (Add / Remove)")
+        print("What operation you want to perform?")
         print("1. Add")
         print("2. Remove")
         print("3. List")
