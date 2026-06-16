@@ -1,2 +1,0 @@
-
-print("Max Verstappen")
