@@ -1,4 +1,4 @@
-**# Python Foundations
+# Python Foundations
 
 Collection of Python programs created while learning programming fundamentals, problem solving, and backend development.
 
